@@ -7,6 +7,7 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
+    
 
 
 }
@@ -163,6 +164,7 @@ header{
 .banner button:hover{
     color: black;
 }
+
 
 @keyframes moveBanner {
     0% {
