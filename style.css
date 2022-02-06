@@ -85,6 +85,7 @@ html{
     opacity: 1;
 }
 
+
 header{
     width: 100%;
     height: 100vh;
@@ -633,4 +634,39 @@ header{
     border-radius: .3rem;
     box-shadow:  0 0.1rem 0.6rem #00000009;
     
+  }
+
+  @media (min-width: 320px) and (max-width: 699px) {
+    
+  header{
+      width: 100vh;
+      height: 100vh;
+  }
+  .banner h1{
+    width: 90%;
+    font-size: 4rem;
+    line-height: 3.7rem;
+  }
+  .sidebar{
+    height: 100%;
+  }
+  .section .conhecimentos-img-wrapper{
+    display: none;
+  }
+  .sessao-conhecimentos{
+    width:100vh;
+  }
+  .conhecimentos{
+    display:grid;
+    grid-template-columns: repeat (16,1fr);
+    grid-template-rows: repeat(6, 6rem);
+    row-gap: .5rem;
+  }
+  .conhecimentos p{
+    line-height: 1rem;
+  }
+  .conhecimento:nth-child(1){
+     grid-column: 2/8;
+     grid-row: 1/3;
+  }
   }
