@@ -4,12 +4,11 @@
 # Portfólio
 
 - Meu Portfólio como desenvolvedor, aqui terá meus conhecimentos, projetos e meu contato. 
-- Link do site: <a href="marcelino-neto.github.io/portfolio-"> marcelino-neto.github.io/portfolio-</a> 
-
+- Link do site: <a href="marcelino-neto.github.io/portfolio-" target="_blank"> https://marcelino-neto.github.io/portfolio-
 ## Portfolio
 
 - My Portfolio as a developer, here you will have my knowledge, projects and my contact.
-- website link: <a href="marcelino-neto.github.io/portfolio-"> marcelino-neto.github.io/portfolio-</a> 
+- website link: <a href="marcelino-neto.github.io/portfolio-"target="_blank"> https://marcelino-neto.github.io/portfolio-</a> 
 
 ## Tarefas
 
