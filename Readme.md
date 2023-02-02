@@ -1,4 +1,4 @@
-<h2 align='center'>🚧Status: DEVELOPING🚧
+<h2 align='center'>Status: 🚧DEVELOPING🚧
 </h2> <br> <br>
 
 # Portfólio
