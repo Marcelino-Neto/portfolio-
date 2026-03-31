@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700&family=Josefin+Slab:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Mulish:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Baloo+Da+2:wght@400;500;600;700&family=Josefin+Slab:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Mulish:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap');
 
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
@@ -7,12 +7,10 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
-    
-
-
 }
+
 :root{
-    --font-primary:"Baloo Da 2", serif;
+    --font-primary: "Inter", sans-serif;
     --font-secudary: "Josefin Slab", serif;
     --font-action: "Mulish", serif;
 }
@@ -21,43 +19,47 @@ html{
 }
 
 
-.hamburguer{ 
-   /* background-color: red; */
-    width: 2rem;        
-    height: 2rem;
+.hamburguer { 
+    width: 2.2rem;        
+    height: 1.5rem;
     position: fixed;
     z-index: 100;
     right: 2rem;
     top: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
     cursor: pointer;
+    transition: right 1s;
 }
-.show-menu .hamburguer{
+.show-menu .hamburguer {
     right: 16rem;
 }
 
-
-.line{
+.line {
     width: 100%;
-    height: .1rem;
+    height: 0.15rem;
     background-color: #FFFFFF;
     box-shadow: 0.1rem 0.1rem 1px black;
-    transition: transform 1s;
-    
+    transition: all 0.4s ease-in-out;
+    position: absolute;
+    left: 0;
 }
 
+#line1 { top: 0; }
+#line2 { top: 50%; transform: translateY(-50%); }
+#line3 { bottom: 0; }
+
 .show-menu #line1 {
-    transform: rotate(45deg) translate(0.3rem, 0.45rem);
-  }
-  .show-menu #line2 {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+.show-menu #line2 {
     opacity: 0;
+    width: 0;
     visibility: hidden;
-  }
-  .show-menu #line3 {
-    transform: rotate(-45deg) translate(0.3rem, -0.45rem);
-  }
+}
+.show-menu #line3 {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+}
   
 .hamburguer span{
     position: absolute;
@@ -636,37 +638,145 @@ header{
     
   }
 
-  @media (min-width: 320px) and (max-width: 699px) {
-    
-  header{
-      width: 100vh;
-      height: 100vh;
+@media screen and (max-width: 850px) {
+  /* Banner Principal */
+  header {
+    width: 100%;
+    height: 100vh;
   }
-  .banner h1{
+  .banner {
+    left: 5%;
     width: 90%;
-    font-size: 4rem;
-    line-height: 3.7rem;
   }
-  .sidebar{
+  .banner h1 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+  .banner p {
+    font-size: 1.5rem;
+  }
+
+  /* Hamburguer Menu e Aba Lateral */
+  .show-menu .hamburguer {
+    right: 14rem;
+  }
+  .sidebar {
     height: 100%;
+    width: 18rem;
+    right: -18rem;
   }
-  .section .conhecimentos-img-wrapper{
+  .show-menu .sidebar {
+    right: 0;
+  }
+
+  /* Seção Conhecimentos - mudando de Grid para Flex Column */
+  .sessao-conhecimentos {
+    width: 100%;
+    padding: 2rem 0;
+  }
+  .conhecimentos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    height: auto;
+  }
+  .conhecimento {
+    width: 85%;
+  }
+  .conhecimentos-img-wrapper {
     display: none;
   }
-  .sessao-conhecimentos{
-    width:100vh;
+  /* Tirando forçação de posição do layout desktop nesses filhos */
+  .conhecimento:nth-child(1),
+  .conhecimento:nth-child(2),
+  .conhecimento:nth-child(3),
+  .conhecimento:nth-child(4),
+  .conhecimento:nth-child(5),
+  .conhecimento:nth-child(6) {
+    grid-column: auto;
+    grid-row: auto;
   }
-  .conhecimentos{
-    display:grid;
-    grid-template-columns: repeat (16,1fr);
-    grid-template-rows: repeat(6, 6rem);
-    row-gap: .5rem;
+
+  /* Seção Projetos - Empilhando Vertical */
+  .sessao-projetos {
+    width: 100%;
   }
-  .conhecimentos p{
-    line-height: 1rem;
+  .projetos {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
   }
-  .conhecimento:nth-child(1){
-     grid-column: 2/8;
-     grid-row: 1/3;
+
+  /* Seção Contato - Esconder metade em telas estreitas e centralizar forms */
+  .sessao-contato {
+    width: 100%;
+    height: auto;
+    padding: 4rem 0;
   }
+  .contato-wrapper {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
   }
+  .contato-left {
+    display: none;
+  }
+  .contato-right {
+    width: 100%;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+  }
+  .field {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Seção Orçamento */
+  .sessao-orcamento {
+    height: auto;
+    padding: 6rem 0;
+  }
+  .orcamento-wrapper {
+    width: 90%;
+    height: auto;
+  }
+  .sessao-orcamento h1 {
+    font-size: 1.8rem;
+    padding: 0.5rem 1rem;
+    top: -1.5rem;
+    left: 5%;
+    width: 80%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .sessao-orcamento form {
+    grid-template-columns: 1fr; /* Coluna unica para label e inputs */
+    margin: 2rem;
+    column-gap: 0;
+  }
+  .btn-orcamento {
+    grid-column: 1; /* Forçar botao ficar na primeira (e unica) coluna */
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  /* Footer e links finais */
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 90%;
+  }
+  .social-list ul {
+    justify-content: center;
+    padding: 0;
+  }
+  .social-list a {
+    margin: 0 1rem;
+  }
+  #link-topo {
+    right: 1.5rem;
+    bottom: 1.5rem;
+  }
+}
